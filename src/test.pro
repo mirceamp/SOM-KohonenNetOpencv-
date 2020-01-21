@@ -30,11 +30,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    node.cpp
+    node.cpp \
+    somclass.cpp
 
 HEADERS += \
         mainwindow.h \
-    node.h
+    node.h \
+    somclass.h
 
 FORMS += \
         mainwindow.ui

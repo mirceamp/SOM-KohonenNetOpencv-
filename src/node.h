@@ -4,10 +4,13 @@
 #include <stdio.h>
 #include<time.h>
 #include <QDebug>
+#include <math.h>
 
 class Node
 {
 private:
+    //possition in the lattice
+    int x,y;
     //weights
     double *m_w;
     int nrWeights;
@@ -23,6 +26,12 @@ public:
     //@input_vector - the input vector containing the features
     //it has to be the same size as the weight vector
     double GetDistance(double *input_vector);
+    //given the learning rate and a target vector this function
+    //adjusts the node weights accordingly
+    void AdjustWeights(const double *input_vector,
+                         const double LearningRate,
+                         const double Influence);
+
 };
 
 #endif // NODE_H
