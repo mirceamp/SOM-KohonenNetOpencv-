@@ -9,8 +9,7 @@
 class Node
 {
 private:
-    //possition in the lattice
-    int x,y;
+
     //weights
     double *m_w;
     int nrWeights;
@@ -18,6 +17,8 @@ private:
     //@Weights - feature vector input
     void initializeWeights(int nrWeights);
 public:
+    //possition in the lattice
+    int x,y;
     //empty constructor
     Node();
     //@Weights - feature vector input
@@ -25,10 +26,10 @@ public:
     //return the distance between the input vector and the weight vector
     //@input_vector - the input vector containing the features
     //it has to be the same size as the weight vector
-    double GetDistance(double *input_vector);
+    double GetDistance( double *input_vector);
     //given the learning rate and a target vector this function
     //adjusts the node weights accordingly
-    void AdjustWeights(const double *input_vector,
+    void AdjustWeights( double *input_vector,
                          const double LearningRate,
                          const double Influence);
 

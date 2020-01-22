@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include <node.h>
 #include <QMainWindow>
+#include "somclass.h"
 
 using namespace cv;
 
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    SOMClass *sc;
 
 private:
     Ui::MainWindow *ui;

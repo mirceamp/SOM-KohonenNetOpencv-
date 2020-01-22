@@ -31,7 +31,7 @@ double Node::GetDistance(double *input_vector)
   return result;
 }
 
-void Node::AdjustWeights(const double *input_vector,
+void Node::AdjustWeights( double *input_vector,
                      const double LearningRate,
                      const double Influence)
 {
