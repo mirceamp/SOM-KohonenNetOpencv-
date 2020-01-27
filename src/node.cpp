@@ -11,14 +11,19 @@ Node::Node(int Weights):
 {
     m_w = new double[Weights];
     initializeWeights(nrWeights);
+
 }
 void Node::initializeWeights(int nrWeights)
 {
-    srand(static_cast<unsigned int>(time(nullptr)));
+   // srand(static_cast<unsigned int>(time(nullptr)));
+
+    std::default_random_engine generator(static_cast<unsigned int>(time(nullptr)));
+    std::uniform_real_distribution<double> distribution(0.0,1.0);
+
     for(int i = 0; i < nrWeights; i++)
     {
-        m_w[i] = (static_cast<double>( rand() % 1000000000) / (RAND_MAX)) ;
-        qDebug() << m_w[i] << "\n";
+        m_w[i] = distribution(generator);//(static_cast<double>( rand() % 1000000000) / (RAND_MAX)) ;
+      //  qDebug() << m_w[i] << "\n";
     }
 }
 double Node::GetDistance(double *input_vector)

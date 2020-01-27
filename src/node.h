@@ -9,14 +9,13 @@
 class Node
 {
 private:
-
+    //@Weights - feature vector input
+    void initializeWeights(int nrWeights);
+public:
     //weights
     double *m_w;
     int nrWeights;
     //initializes the weights to a nr between 0 and 1
-    //@Weights - feature vector input
-    void initializeWeights(int nrWeights);
-public:
     //possition in the lattice
     int x,y;
     //empty constructor
